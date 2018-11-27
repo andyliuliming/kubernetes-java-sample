@@ -27,6 +27,7 @@ popd
 cp $DIR/maven/webapp/target/clustered-app.war $DIR/docker-images/
 
 pushd $DIR/docker-images
-  docker build --tag=sample/clustered-app .
+  docker build --tag=$ACR_NAME.azurecr.io/samples/clustered-app .
+  docker push $ACR_NAME.azurecr.io/samples/clustered-app
 popd
 
