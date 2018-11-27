@@ -5,3 +5,7 @@ pushd $DIR/maven/webapp
 popd
 
 cp $DIR/maven/webapp/target/clustered-app.war $DIR/docker-images/
+
+pushd $DIR/docker-images
+  docker build --tag=sample/clustered-app .
+popd
